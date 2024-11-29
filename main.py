@@ -159,7 +159,7 @@ if "cothinker" in st.session_state and "brainstorm" in st.session_state:
 if "brainstorm" in st.session_state:
     if st.session_state["brainstorm"].record["now"]>len(st.session_state["brainstorm"].record["expert_name"]):
         for name in st.session_state["brainstorm"].record["expert_name"]:
-            show_paper = f"This is **{name}'s** note.📃\n\n{st.session_state["brainstorm"].record["paper_%s"%name]}"
+            show_paper = f"This is **{name}'s** note.📃\n\n{st.session_state["brainstorm"].record[f"paper_{name}"]}"
             show_and_record(show_paper, role="assistant")
 
 if "brainstorm" in st.session_state:
