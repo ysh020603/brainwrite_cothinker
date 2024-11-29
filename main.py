@@ -70,7 +70,7 @@ if st.session_state["if_begin"] == False:
         st.session_state["if_begin"] = True
         current_file_path = os.path.abspath(__file__)
         current_file_directory = os.path.dirname(current_file_path)
-        background_path = current_file_directory + r"\data\background_short.json"
+        background_path = current_file_directory + r"/data/background_short.json"
         url = "https://open.bigmodel.cn/api/paas/v4/"
         st.session_state["brainstorm"] = Brainwrite(api_key=api_key, 
                                                     url=url, 
