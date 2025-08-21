@@ -3,6 +3,27 @@ import streamlit as st
 from typing import Literal
 import os
 
+import streamlit as st
+import base64
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+img_path = 'd:\\Users\\Administrator\\Desktop\\demo演示背景\\demo背景13.png'
+img_base64 = get_base64_of_bin_file(img_path)
+
+page_bg_img = f"""
+<style>
+.stApp {{
+background-image: url("data:image/jpg;base64,{img_base64}");
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}}
+</style>
+"""
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 def show_and_record(show_content:str, role:str=Literal["assistant", "user"])-> None:
     st.chat_message(role).write(show_content)
@@ -165,6 +186,7 @@ if "brainstorm" in st.session_state:
 if "brainstorm" in st.session_state:
     if st.session_state["brainstorm"].record["now"]>len(st.session_state["brainstorm"].record["expert_name"]):
         st.info("The brainstorm is over.")
+
 
 
 
