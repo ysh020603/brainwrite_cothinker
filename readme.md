@@ -36,11 +36,12 @@ The project consists of three parts
 
 
 ## demo
-![demo1](pic/demo1.png)
-![demo2](pic/demo2.png)
-![demo3](pic/demo3.png)
+![demo1](pic/brainwrite1.png)
+![demo2](pic/brainwrite2.png)
+![demo3](pic/brainwrite3.png)
 
 
 
 ## contact
 yangsenhao2024@ia.ac.cn
+
