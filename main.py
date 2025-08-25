@@ -4,13 +4,14 @@ from typing import Literal
 import os
 
 import streamlit as st
+import os
 import base64
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
 
-img_path = 'd:\\Users\\Administrator\\Desktop\\demo演示背景\\demo背景13.png'
+img_path = os.path.join("pic", "demo背景13.png")
 img_base64 = get_base64_of_bin_file(img_path)
 
 page_bg_img = f"""
@@ -186,6 +187,7 @@ if "brainstorm" in st.session_state:
 if "brainstorm" in st.session_state:
     if st.session_state["brainstorm"].record["now"]>len(st.session_state["brainstorm"].record["expert_name"]):
         st.info("The brainstorm is over.")
+
 
 
 
